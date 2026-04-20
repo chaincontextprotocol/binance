@@ -28,18 +28,12 @@
 
 ## Quickstart (Claude Desktop)
 
-Install the package, then point your MCP host at the built entry:
-
-```sh
-npm install -g @chaincontextprotocol/binance
-```
-
 ```jsonc
 {
     "mcpServers": {
-        "chaincontextprotocol-binance": {
-            "command": "node",
-            "args": ["<path-to>/node_modules/@chaincontextprotocol/binance/build/index.js"],
+        "@chaincontextprotocol/binance": {
+            "command": "npx",
+            "args": ["-y", "@chaincontextprotocol/binance"],
             "env": {
                 "BINANCE_API_KEY": "your_binance_api_key",
                 "BINANCE_API_SECRET": "your_binance_api_secret"

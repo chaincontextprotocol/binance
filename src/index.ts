@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { McpServer, StdioServerTransport } from "./mcp.ts";
 
 import { registerBinanceSpotTools } from "./tools/binance-spot/index.ts";
