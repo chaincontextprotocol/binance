@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working on **binance-mcp** — a production MCP server for the Binance exchange.
+Guidance for Claude Code when working on **`@chaincontextprotocol/binance`** — a production MCP server for the Binance exchange.
 
 **Maintainer:** Mr.Roblox (sankyago)
 
@@ -8,24 +8,24 @@ Guidance for Claude Code when working on **binance-mcp** — a production MCP se
 
 An MCP (Model Context Protocol) server that exposes the Binance exchange REST API as Claude-callable tools. Each tool wraps one Binance endpoint, validates input with Zod, calls the official `@binance/*` SDK, and returns a `text` content block with the JSON response.
 
-The transport is `StdioServerTransport`, so the binary is meant to be launched by an MCP host (Claude Desktop, Claude Code, etc.), not run as a long-lived daemon.
+The transport is `StdioServerTransport`, so the server is meant to be launched by an MCP host (Claude Desktop, Claude Code, etc.) via `node ./build/index.js`, not run as a long-lived daemon.
 
 ## Build & run
 
 ```sh
 npm install
-npm run build      # tsc → ./build, chmod +x build/index.js
-npm start          # node ./build/index.js
-npm run init       # interactive: writes .env + Claude Desktop config
+npm run build      # tsc → ./build
+BINANCE_API_KEY=... BINANCE_API_SECRET=... npm start
 ```
 
-Requires Node ≥ 18. The shebang in `build/index.js` lets `npx binance-mcp` work after publish.
+Requires Node ≥ 18.
 
 ## Repository layout
 
 ```
 src/
-  index.ts                 # entrypoint: dotenv, McpServer, register*, stdio transport
+  index.ts                 # entrypoint: McpServer, register*, stdio transport
+  mcp.ts                   # barrel re-exporting McpServer + StdioServerTransport
   config/
     binanceClient.ts       # single source of truth for every @binance/* SDK client
   utils/
@@ -36,13 +36,8 @@ src/
         <action>.ts        # one MCP tool per file
         index.ts           # registers all tools in this sub-API
       index.ts             # registers all sub-APIs in this domain
-docs/superpowers/
-  specs/                   # design docs
-  plans/                   # implementation plans
 .github/workflows/
   ci.yml                   # build on PR + push to main
-  release.yml              # semantic-release on push to main → publishes to npm
-.releaserc.json            # conventional-commits → version bumps + changelog
 ```
 
 ## Tool naming convention
@@ -82,10 +77,10 @@ The TypeScript `register<Whatever>()` function names are internal — only the `
 1. Pick (or create) the right `src/tools/<domain>/<sub>-api/` folder.
 2. Create `<actionName>.ts`:
    ```ts
-   import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+   import { McpServer } from "../../../mcp.ts";
    import { z } from "zod";
-   import { spotClient } from "../../../config/binanceClient.js";
-   import { ok, fail } from "../../../utils/toolResponse.js";
+   import { spotClient } from "../../../config/binanceClient.ts";
+   import { ok, fail } from "../../../utils/toolResponse.ts";
 
    export function registerBinanceMyNewThing(server: McpServer) {
        server.tool(
@@ -111,23 +106,11 @@ The TypeScript `register<Whatever>()` function names are internal — only the `
 
 ## Credentials
 
-Read from `.env` via `dotenv` at startup. **Never** hard-code or log keys. `.env.example` has the template. The `init` command writes `.env` for the user interactively.
+Read from `process.env` (`BINANCE_API_KEY`, `BINANCE_API_SECRET`). The MCP host injects them via the `env` block in its config. The runtime never reads from disk — no `.env`, no `dotenv`.
 
 ## Error handling
 
 Every tool **must** wrap the SDK call in `try`/`catch` and return via `fail("context", error)`. The helper extracts Binance's `code`, HTTP status, and response body so Claude (or the human reading the tool output) can diagnose without rerunning.
-
-## Release flow
-
-`main` is the only release branch. Push a conventional-commits message — `release.yml` runs `semantic-release`, which:
-
-1. Determines version bump from commit types (`feat:` → minor, `fix:` → patch, etc.).
-2. Updates `CHANGELOG.md` and `package.json`.
-3. Tags the release on GitHub.
-4. Publishes to npm (requires `NPM_TOKEN` secret).
-5. Commits the changelog/version bump back with `[skip ci]`.
-
-After publish, end users install via `npx binance-mcp` — no clone required.
 
 ## Conventions for Claude
 
@@ -136,3 +119,5 @@ After publish, end users install via `npx binance-mcp` — no clone required.
 - **Don't add tests in this repo** — there is no test harness. Verification is `npm run build`.
 - **Don't `npm install` packages without checking the lockfile diff.** Bump dependency versions in `package.json` and re-run `npm install` so the lock updates atomically.
 - **Don't restructure the folder tree.** The `domain → tool name` mapping (table above) is coupled to it.
+- **Source files import with `.ts` extensions** (TS rewrites them to `.js` at build). The only file that imports from `@modelcontextprotocol/sdk/.../*.js` directly is `src/mcp.ts`.
+- **No filesystem access at runtime.** No `fs`, no `dotenv`, no path manipulation. Credentials and config come from env vars only.

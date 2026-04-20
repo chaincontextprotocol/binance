@@ -6,7 +6,7 @@
 
 ## Overview
 
-`binance-mcp` exposes 150+ Binance REST endpoints as Claude-callable MCP tools. Drop it into Claude Desktop or any MCP host and Claude can read your portfolio, place orders, manage staking, and run TWAP/VP algo trades — all through structured tool calls validated by Zod.
+`@chaincontextprotocol/binance` exposes 150+ Binance REST endpoints as Claude-callable MCP tools. Drop it into Claude Desktop or any MCP host and Claude can read your portfolio, place orders, manage staking, and run TWAP/VP algo trades — all through structured tool calls validated by Zod.
 
 ## Features
 
@@ -28,14 +28,18 @@
 
 ## Quickstart (Claude Desktop)
 
-After this package is published, no clone needed:
+Install the package, then point your MCP host at the built entry:
+
+```sh
+npm install -g @chaincontextprotocol/binance
+```
 
 ```jsonc
 {
     "mcpServers": {
-        "binance-mcp": {
-            "command": "npx",
-            "args": ["-y", "binance-mcp"],
+        "chaincontextprotocol-binance": {
+            "command": "node",
+            "args": ["<path-to>/node_modules/@chaincontextprotocol/binance/build/index.js"],
             "env": {
                 "BINANCE_API_KEY": "your_binance_api_key",
                 "BINANCE_API_SECRET": "your_binance_api_secret"
@@ -50,21 +54,14 @@ Restart Claude Desktop. The 150+ `binance_*` tools become available.
 ## Local development
 
 ```sh
-git clone https://github.com/your-user/binance-mcp.git
-cd binance-mcp
-cp .env.example .env       # then fill in your Binance API key/secret
+git clone https://github.com/chaincontextprotocol/binance.git
+cd binance
 npm install
 npm run build
-npm start                  # runs build/index.js on stdio
+BINANCE_API_KEY=... BINANCE_API_SECRET=... npm start
 ```
 
 Requires Node ≥ 18.
-
-The interactive bootstrapper writes `.env` and registers the server in Claude Desktop in one step:
-
-```sh
-npm run init:build
-```
 
 ## Creating a Binance API key
 

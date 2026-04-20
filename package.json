@@ -4,14 +4,9 @@
     "description": "Production-grade MCP server for the Binance exchange — portfolio, trading, staking, earn, NFT, loans, and more.",
     "main": "build/index.js",
     "type": "module",
-    "bin": {
-        "chaincontextprotocol-binance": "./build/index.js"
-    },
     "scripts": {
-        "clean": "rm -rf build",
-        "build": "npm run clean && tsc",
-        "start": "node ./build/index.js",
-        "semantic-release": "semantic-release"
+        "build": "tsc",
+        "start": "node ./build/index.js"
     },
     "files": [
         "build",
