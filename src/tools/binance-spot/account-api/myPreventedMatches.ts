@@ -1,0 +1,46 @@
+// src/tools/binance-spot/account-api/myPreventedMatches.ts
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { z } from "zod";
+import { spotClient } from "../../../config/binanceClient.js";
+import { fail } from "../../../utils/toolResponse.js";
+
+export function registerBinanceMyPreventedMatches(server: McpServer) {
+    server.tool(
+        "binance_spot_account_prevented_matches",
+        "Get prevented matches for Self-Trade Prevention.",
+        {
+            symbol: z.string().describe("Symbol of the trading pair (e.g., BTCUSDT)"),
+            preventedMatchId: z.number().optional().describe("Prevented match ID"),
+            orderId: z.number().optional().describe("Order ID"),
+            fromPreventedMatchId: z.number().optional().describe("Prevented match ID to fetch from"),
+            limit: z.number().optional().describe("Default 500; max 1000"),
+            recvWindow: z.number().optional().describe("The value cannot be greater than 60000")
+        },
+        async ({ symbol, preventedMatchId, orderId, fromPreventedMatchId, limit, recvWindow }) => {
+            try {
+                const params: any = { symbol };
+                
+                if (preventedMatchId !== undefined) params.preventedMatchId = preventedMatchId;
+                if (orderId !== undefined) params.orderId = orderId;
+                if (fromPreventedMatchId !== undefined) params.fromPreventedMatchId = fromPreventedMatchId;
+                if (limit !== undefined) params.limit = limit;
+                if (recvWindow !== undefined) params.recvWindow = recvWindow;
+                
+                const response = await spotClient.restAPI.myPreventedMatches(params);
+
+                const data = await response.data();
+
+                return {
+                    content: [
+                        {
+                            type: "text",
+                            text: `Retrieved prevented matches for ${symbol}. Response: ${JSON.stringify(data)}`
+                        }
+                    ]
+                };
+            } catch (error) {
+                return fail("Failed to retrieve prevented matches", error);
+            }
+        }
+    );
+}

@@ -1,0 +1,100 @@
+{
+    "name": "binance-mcp",
+    "version": "0.0.0-development",
+    "description": "Production-grade MCP server for the Binance exchange — portfolio, trading, staking, earn, NFT, loans, and more.",
+    "main": "build/index.js",
+    "type": "module",
+    "bin": {
+        "binance-mcp": "./build/index.js"
+    },
+    "scripts": {
+        "clean": "node -e \"require('fs').rmSync('build', { recursive: true, force: true })\"",
+        "build": "npm run clean && tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+        "start": "node ./build/index.js",
+        "init": "node ./build/init.js",
+        "init:build": "npm run build && node ./build/init.js",
+        "semantic-release": "semantic-release"
+    },
+    "files": [
+        "build",
+        "README.md",
+        "LICENSE"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "binance",
+        "binance-mcp",
+        "binance-api",
+        "mcp",
+        "model-context-protocol",
+        "claude",
+        "claude-desktop",
+        "ai-agents",
+        "trading",
+        "spot-trading",
+        "crypto",
+        "cryptocurrency",
+        "portfolio",
+        "algo-trading",
+        "twap",
+        "staking",
+        "simple-earn",
+        "nft",
+        "dual-investment",
+        "vip-loan",
+        "convert",
+        "c2c",
+        "pay",
+        "fiat",
+        "mining",
+        "wallet",
+        "copy-trading"
+    ],
+    "author": "Mr.Roblox (sankyago)",
+    "license": "MIT",
+    "engines": {
+        "node": ">=18"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/commit-analyzer": "^13.0.1",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/github": "^12.0.6",
+        "@semantic-release/npm": "^13.1.5",
+        "@semantic-release/release-notes-generator": "^14.1.0",
+        "@types/figlet": "^1.7.0",
+        "@types/fs-extra": "^11.0.4",
+        "@types/node": "^22.10.0",
+        "@types/prompts": "^2.4.9",
+        "semantic-release": "^25.0.3",
+        "typescript": "^5.8.2"
+    },
+    "dependencies": {
+        "@binance/algo": "^3.1.15",
+        "@binance/c2c": "^5.0.0",
+        "@binance/connector": "^3.6.1",
+        "@binance/convert": "^5.0.10",
+        "@binance/copy-trading": "^3.1.13",
+        "@binance/dual-investment": "^4.1.13",
+        "@binance/fiat": "^6.0.13",
+        "@binance/mining": "^5.0.10",
+        "@binance/nft": "^3.1.13",
+        "@binance/pay": "^6.0.0",
+        "@binance/rebate": "^3.1.13",
+        "@binance/simple-earn": "^13.0.6",
+        "@binance/spot": "^29.0.0",
+        "@binance/staking": "^8.0.5",
+        "@binance/vip-loan": "^8.0.10",
+        "@binance/wallet": "^17.0.7",
+        "@modelcontextprotocol/sdk": "^1.29.0",
+        "chalk": "^5.6.2",
+        "dotenv": "^17.4.2",
+        "figlet": "^1.11.0",
+        "fs-extra": "^11.3.4",
+        "ora": "^9.3.0",
+        "prompts": "^2.4.2",
+        "zod": "^3.25.0"
+    }
+}
