@@ -39,9 +39,6 @@ src/
 docs/superpowers/
   specs/                   # design docs
   plans/                   # implementation plans
-scripts/
-  rename-tools.mjs         # codemod: snake_case tool names
-  fix-tool-names.mjs       # second-pass fixups
 .github/workflows/
   ci.yml                   # build on PR + push to main
   release.yml              # semantic-release on push to main → publishes to npm
@@ -138,4 +135,4 @@ After publish, end users install via `npx binance-mcp` — no clone required.
 - **Don't widen Zod schemas to satisfy a TypeScript error.** If the SDK request type changed, fix the call site, not the schema.
 - **Don't add tests in this repo** — there is no test harness. Verification is `npm run build`.
 - **Don't `npm install` packages without checking the lockfile diff.** Bump dependency versions in `package.json` and re-run `npm install` so the lock updates atomically.
-- **Don't restructure the folder tree.** The naming codemod and the `domain → folder` mapping in `scripts/rename-tools.mjs` are coupled to it.
+- **Don't restructure the folder tree.** The `domain → tool name` mapping (table above) is coupled to it.
