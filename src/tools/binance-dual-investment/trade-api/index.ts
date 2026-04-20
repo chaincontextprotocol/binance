@@ -1,9 +1,9 @@
 // src/tools/binance-dual-investment/trade-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceSubscribeDualInvestmentProducts } from "./subscribeDualInvestmentProducts.js";
-import { registerBinanceCheckDualInvestmentAccounts } from "./checkDualInvestmentAccounts.js";
-import { registerBinanceGetDualInvestmentPositions } from "./getDualInvestmentPositions.js";
-import { registerBinanceChangeAutoCompoundStatus } from "./changeAutoCompoundStatus.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceSubscribeDualInvestmentProducts } from "./subscribeDualInvestmentProducts.ts";
+import { registerBinanceCheckDualInvestmentAccounts } from "./checkDualInvestmentAccounts.ts";
+import { registerBinanceGetDualInvestmentPositions } from "./getDualInvestmentPositions.ts";
+import { registerBinanceChangeAutoCompoundStatus } from "./changeAutoCompoundStatus.ts";
 
 export function registerBinanceDualInvestmentTradeApiTools(server: McpServer) {
     registerBinanceSubscribeDualInvestmentProducts(server);

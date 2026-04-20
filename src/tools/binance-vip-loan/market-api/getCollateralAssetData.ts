@@ -1,8 +1,8 @@
 // src/tools/binance-vip-loan/market-api/getCollateralAssetData.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { vipLoanClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { vipLoanClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceGetCollateralAssetData(server: McpServer) {
     server.tool(

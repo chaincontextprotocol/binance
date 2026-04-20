@@ -1,12 +1,12 @@
 // src/tools/binance-convert/trade-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceConvertAcceptQuote } from "./acceptQuote.js";
-import { registerBinanceConvertCancelLimitOrder } from "./cancelLimitOrder.js";
-import { registerBinanceGetConvertTradeHistory } from "./getConvertTradeHistory.js";
-import { registerBinanceConvertOrderStatus } from "./orderStatus.js";
-import { registerBinanceConvertPlaceLimitOrder } from "./placeLimitOrder.js";
-import { registerBinanceConvertQueryLimitOpenOrders } from "./queryLimitOpenOrders.js";
-import { registerBinanceConvertSendQuoteRequest } from "./sendQuoteRequest.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceConvertAcceptQuote } from "./acceptQuote.ts";
+import { registerBinanceConvertCancelLimitOrder } from "./cancelLimitOrder.ts";
+import { registerBinanceGetConvertTradeHistory } from "./getConvertTradeHistory.ts";
+import { registerBinanceConvertOrderStatus } from "./orderStatus.ts";
+import { registerBinanceConvertPlaceLimitOrder } from "./placeLimitOrder.ts";
+import { registerBinanceConvertQueryLimitOpenOrders } from "./queryLimitOpenOrders.ts";
+import { registerBinanceConvertSendQuoteRequest } from "./sendQuoteRequest.ts";
 
 export function registerBinanceConvertTradeTools(server: McpServer) {
     // Register the route to accept a quote for a convert trade

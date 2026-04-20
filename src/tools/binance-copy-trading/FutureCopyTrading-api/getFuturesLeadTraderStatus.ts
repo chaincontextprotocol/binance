@@ -1,8 +1,8 @@
 // src/tools/binance-copy-trading/FutureCopyTrading-api/getFuturesLeadTraderStatus.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { copyTradingClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { copyTradingClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceGetFuturesLeadTraderStatus(server: McpServer) {
     server.tool(

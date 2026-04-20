@@ -1,10 +1,10 @@
 // src/tools/binance-wallet/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceWalletAccountApiTools } from "./account-api/index.js";
-import { registerBinanceWalletOthersApiTools } from "./others-api/index.js";
-import { registerBinanceWalletTravelRuleApiTools } from "./travel-rule-api/index.js";
-import { registerBinanceWalletAssetApiTools } from "./asset-api/index.js";
-import { registerBinanceWalletCapitalApiTools } from "./capital-api/index.js";
+import { McpServer } from "../../mcp.ts";
+import { registerBinanceWalletAccountApiTools } from "./account-api/index.ts";
+import { registerBinanceWalletOthersApiTools } from "./others-api/index.ts";
+import { registerBinanceWalletTravelRuleApiTools } from "./travel-rule-api/index.ts";
+import { registerBinanceWalletAssetApiTools } from "./asset-api/index.ts";
+import { registerBinanceWalletCapitalApiTools } from "./capital-api/index.ts";
 
 export function registerBinanceWalletTools(server: McpServer) {
     // Account API tools

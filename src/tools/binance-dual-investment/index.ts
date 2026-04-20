@@ -1,7 +1,7 @@
 // src/tools/binance-dual-investment/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceDualInvestmentTradeApiTools } from "./trade-api/index.js";
-import { registerBinanceDualInvestmentMarketApiTools } from "./market-api/index.js";
+import { McpServer } from "../../mcp.ts";
+import { registerBinanceDualInvestmentTradeApiTools } from "./trade-api/index.ts";
+import { registerBinanceDualInvestmentMarketApiTools } from "./market-api/index.ts";
 
 export function registerBinanceDualInvestmentTools(server: McpServer) {
     registerBinanceDualInvestmentTradeApiTools(server);

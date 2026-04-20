@@ -1,8 +1,8 @@
 // src/tools/binance-c2c/getC2CTradeHistory.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { c2cClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { c2cClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceGetC2CTradeHistory(server: McpServer) {
     server.tool(

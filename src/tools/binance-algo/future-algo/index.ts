@@ -1,11 +1,11 @@
 // src/tools/binance-spot/market-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceVPNewTrade } from "./VPNewTrade.js";
-import { registerBinanceFutureHistoricalAlgoOrder } from "./historicalAlgoOrder.js";
-import { registerBinanceFutureCancelAlgoOrder } from "./cancelAlgoOrder.js";
-import { registerBinanceFutureCurrentAlgoOpenOrders } from "./currentAlgoOpenOrders.js";
-import { registerBinanceFutureSubOrders } from "./subOrders.js";
-import { registerBinanceTwapNewTrade } from "./TwapNewTrade.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceVPNewTrade } from "./VPNewTrade.ts";
+import { registerBinanceFutureHistoricalAlgoOrder } from "./historicalAlgoOrder.ts";
+import { registerBinanceFutureCancelAlgoOrder } from "./cancelAlgoOrder.ts";
+import { registerBinanceFutureCurrentAlgoOpenOrders } from "./currentAlgoOpenOrders.ts";
+import { registerBinanceFutureSubOrders } from "./subOrders.ts";
+import { registerBinanceTwapNewTrade } from "./TwapNewTrade.ts";
 
 export function registerBinanceAlgoFutureApiTools(server: McpServer) {
     // Registers a new VP (Volume Participation) trade

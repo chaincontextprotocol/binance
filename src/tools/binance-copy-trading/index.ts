@@ -1,6 +1,6 @@
 // src/tools/binance-copy-trading/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceFutureCopyTradingApiTools } from "./FutureCopyTrading-api/index.js";
+import { McpServer } from "../../mcp.ts";
+import { registerBinanceFutureCopyTradingApiTools } from "./FutureCopyTrading-api/index.ts";
 
 // Registers all Binance Copy Trading related tools with the MCP server.
 export function registerBinanceCopyTradingTools(server: McpServer) {

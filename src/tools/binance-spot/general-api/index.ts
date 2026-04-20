@@ -1,8 +1,8 @@
 // src/tools/binance-spot/general-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinancePing } from "./ping.js";
-import { registerBinanceTime } from "./time.js";
-import { registerBinanceExchangeInfo } from "./exchangeInfo.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinancePing } from "./ping.ts";
+import { registerBinanceTime } from "./time.ts";
+import { registerBinanceExchangeInfo } from "./exchangeInfo.ts";
 
 export function registerBinanceGeneralApiTools(server: McpServer) {
     registerBinancePing(server);

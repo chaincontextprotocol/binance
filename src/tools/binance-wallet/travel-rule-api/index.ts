@@ -1,13 +1,13 @@
 //src/tools/binance-wallet/travel-rule-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceWalletBrokerWithdraw } from "./brokerWithdraw.js";
-import { registerBinanceWalletOnboardedVaspList } from "./onboardedVaspList.js";
-import { registerBinanceWalletSubmitDepositQuestionnaire } from "./submitDepositQuestionnaire.js";
-import { registerBinanceWalletWithdrawHistoryV1 } from "./withdrawHistoryV1.js";
-import { registerBinanceWalletDepositHistoryTravelRule } from "./depositHistoryTravelRule.js";
-import { registerBinanceWalletWithdrawHistoryV2 } from "./withdrawHistoryV2.js";
-import { registerBinanceWalletWithdrawTravelRule } from "./withdrawTravelRule.js";
-import { registerBinanceWalletSubmitDepositQuestionnaireTravelRule } from "./submitDepositQuestionnaireTravelRule.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceWalletBrokerWithdraw } from "./brokerWithdraw.ts";
+import { registerBinanceWalletOnboardedVaspList } from "./onboardedVaspList.ts";
+import { registerBinanceWalletSubmitDepositQuestionnaire } from "./submitDepositQuestionnaire.ts";
+import { registerBinanceWalletWithdrawHistoryV1 } from "./withdrawHistoryV1.ts";
+import { registerBinanceWalletDepositHistoryTravelRule } from "./depositHistoryTravelRule.ts";
+import { registerBinanceWalletWithdrawHistoryV2 } from "./withdrawHistoryV2.ts";
+import { registerBinanceWalletWithdrawTravelRule } from "./withdrawTravelRule.ts";
+import { registerBinanceWalletSubmitDepositQuestionnaireTravelRule } from "./submitDepositQuestionnaireTravelRule.ts";
 
 export function registerBinanceWalletTravelRuleApiTools(server: McpServer) {
     registerBinanceWalletBrokerWithdraw(server);

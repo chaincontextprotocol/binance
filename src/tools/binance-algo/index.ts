@@ -1,7 +1,7 @@
 // src/tools/binance-spot/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceAlgoFutureApiTools } from "./future-algo/index.js";
-import { registerBinanceAlgoSpotApiTools } from "./spot-algo/index.js";
+import { McpServer } from "../../mcp.ts";
+import { registerBinanceAlgoFutureApiTools } from "./future-algo/index.ts";
+import { registerBinanceAlgoSpotApiTools } from "./spot-algo/index.ts";
 
 export function registerBinanceAlgoTools(server: McpServer) {
     // Algo API tools

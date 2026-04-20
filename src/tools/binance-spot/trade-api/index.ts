@@ -1,13 +1,13 @@
 // src/tools/binance-spot/trade-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceDeleteOrder } from "./deleteOrder.js";
-import { registerBinanceAllOrders } from "./allOrders.js";
-import { registerBinanceOpenOrderList } from "./openOrderList.js";
-import { registerBinanceNewOrder } from "./newOrder.js";
-import { registerBinanceGetOrder } from "./getOrder.js";
-import { registerBinanceGetOpenOrders } from "./getOpenOrders.js";
-import { registerBinanceDeleteOpenOrders } from "./deleteOpenOrders.js";
-import { registerBinanceOrderOco } from "./orderOco.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceDeleteOrder } from "./deleteOrder.ts";
+import { registerBinanceAllOrders } from "./allOrders.ts";
+import { registerBinanceOpenOrderList } from "./openOrderList.ts";
+import { registerBinanceNewOrder } from "./newOrder.ts";
+import { registerBinanceGetOrder } from "./getOrder.ts";
+import { registerBinanceGetOpenOrders } from "./getOpenOrders.ts";
+import { registerBinanceDeleteOpenOrders } from "./deleteOpenOrders.ts";
+import { registerBinanceOrderOco } from "./orderOco.ts";
 
 export function registerBinanceTradeApiTools(server: McpServer) {
     registerBinanceDeleteOrder(server);

@@ -1,8 +1,8 @@
 // src/tools/binance-staking/SOL-staking-api/claimBoostRewards.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { stakingClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { stakingClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceClaimBoostRewards(server: McpServer) {
     server.tool(

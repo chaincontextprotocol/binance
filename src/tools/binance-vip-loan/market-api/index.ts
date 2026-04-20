@@ -1,8 +1,8 @@
 // src/tools/binance-vip-loan/market-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceGetBorrowInterestRate } from "./getBorrowInterestRate.js";
-import { registerBinanceGetLoanableAssetsData } from "./getLoanableAssetsData.js";
-import { registerBinanceGetCollateralAssetData } from "./getCollateralAssetData.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceGetBorrowInterestRate } from "./getBorrowInterestRate.ts";
+import { registerBinanceGetLoanableAssetsData } from "./getLoanableAssetsData.ts";
+import { registerBinanceGetCollateralAssetData } from "./getCollateralAssetData.ts";
 
 export function registerBinanceVipLoanMarketApiTools(server: McpServer) {
     registerBinanceGetBorrowInterestRate(server);

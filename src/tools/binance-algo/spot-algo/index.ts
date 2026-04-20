@@ -1,10 +1,10 @@
 // src/tools/binance-spot/market-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceSpotTwapNewTrade } from "./spotTWAPOrder.js";
-import { registerBinanceSpotCancelOpenTWAPOrder } from "./cancelOpenTWAPOrder.js";
-import { registerBinanceSpotSubOrders } from "./subOrders.js";
-import { registerBinanceSpotCurrentAlgoOpenOrders } from "./currentAlgoOpenOrders.js";
-import { registerBinanceSpotHistoricalAlgoOrders } from "./historicalAlgoOrders.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceSpotTwapNewTrade } from "./spotTWAPOrder.ts";
+import { registerBinanceSpotCancelOpenTWAPOrder } from "./cancelOpenTWAPOrder.ts";
+import { registerBinanceSpotSubOrders } from "./subOrders.ts";
+import { registerBinanceSpotCurrentAlgoOpenOrders } from "./currentAlgoOpenOrders.ts";
+import { registerBinanceSpotHistoricalAlgoOrders } from "./historicalAlgoOrders.ts";
 
 export function registerBinanceAlgoSpotApiTools(server: McpServer) {
     // Register the TWAP (Time-Weighted Average Price) tool for placing new spot algo orders

@@ -31,9 +31,6 @@
 After this package is published, no clone needed:
 
 ```jsonc
-// ~/Library/Application Support/Claude/claude_desktop_config.json   (macOS)
-// %APPDATA%\Claude\claude_desktop_config.json                       (Windows)
-// ~/.config/Claude/claude_desktop_config.json                       (Linux)
 {
     "mcpServers": {
         "binance-mcp": {

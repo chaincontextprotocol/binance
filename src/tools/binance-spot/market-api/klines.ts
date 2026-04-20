@@ -1,8 +1,8 @@
 // src/tools/binance-spot/market-api/klines.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer } from "../../../mcp.ts";
 import { z } from "zod";
-import { spotClient } from "../../../config/binanceClient.js";
-import { fail } from "../../../utils/toolResponse.js";
+import { spotClient } from "../../../config/binanceClient.ts";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceKlines(server: McpServer) {
     server.tool(

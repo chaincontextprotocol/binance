@@ -1,8 +1,8 @@
 // src/tools/binance-staking/ETH-staking-api/subscribeEthStaking.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { stakingClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { stakingClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceSubscribeEthStaking(server: McpServer) {
     server.tool(

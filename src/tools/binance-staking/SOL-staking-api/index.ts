@@ -1,16 +1,16 @@
 // src/tools/binance-staking/SOL-staking-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceClaimBoostRewards } from "./claimBoostRewards.js";
-import { registerBinanceGetBnsolRateHistory } from "./getBnsolRateHistory.js";
-import { registerBinanceGetBnsolRewardsHistory } from "./getBnsolRewardsHistory.js";
-import { registerBinanceGetBoostRewardsHistory } from "./getBoostRewardsHistory.js";
-import { registerBinanceGetSolRedemptionHistory } from "./getSolRedemptionHistory.js";
-import { registerBinanceGetSolStakingHistory } from "./getSolStakingHistory.js";
-import { registerBinanceGetSolStakingQuotaDetails } from "./getSolStakingQuotaDetails.js";
-import { registerBinanceGetUnclaimedRewards } from "./getUnclaimedRewards.js";
-import { registerBinanceRedeemSol } from "./redeemSol.js";
-import { registerBinanceSolStakingAccount } from "./solStakingAccount.js";
-import { registerBinanceSubscribeSolStaking } from "./subscribeSolStaking.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceClaimBoostRewards } from "./claimBoostRewards.ts";
+import { registerBinanceGetBnsolRateHistory } from "./getBnsolRateHistory.ts";
+import { registerBinanceGetBnsolRewardsHistory } from "./getBnsolRewardsHistory.ts";
+import { registerBinanceGetBoostRewardsHistory } from "./getBoostRewardsHistory.ts";
+import { registerBinanceGetSolRedemptionHistory } from "./getSolRedemptionHistory.ts";
+import { registerBinanceGetSolStakingHistory } from "./getSolStakingHistory.ts";
+import { registerBinanceGetSolStakingQuotaDetails } from "./getSolStakingQuotaDetails.ts";
+import { registerBinanceGetUnclaimedRewards } from "./getUnclaimedRewards.ts";
+import { registerBinanceRedeemSol } from "./redeemSol.ts";
+import { registerBinanceSolStakingAccount } from "./solStakingAccount.ts";
+import { registerBinanceSubscribeSolStaking } from "./subscribeSolStaking.ts";
 
 export function registerBinanceSOLStakingApiTools(server: McpServer) {
     registerBinanceClaimBoostRewards(server);

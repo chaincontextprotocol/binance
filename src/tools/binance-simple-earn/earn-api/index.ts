@@ -1,7 +1,7 @@
 // src/tools/binance-simple-earn/earn-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceSubscribeFlexibleProduct } from "./subscribeFlexibleProduct.js";
-import { registerBinanceRedeemFlexibleProduct } from "./redeemFlexibleProduct.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceSubscribeFlexibleProduct } from "./subscribeFlexibleProduct.ts";
+import { registerBinanceRedeemFlexibleProduct } from "./redeemFlexibleProduct.ts";
 
 export function registerBinanceSimpleEarnApiTools(server: McpServer) {
     // Register the route for subscribing to a flexible earn product

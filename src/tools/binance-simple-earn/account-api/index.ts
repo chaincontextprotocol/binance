@@ -1,7 +1,7 @@
 // src/tools/binance-simple-earn/account-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceSimpleEarnFlexibleProductList } from "./simpleEarnFlexibleProductList.js";
-import { registerBinanceGetFlexibleProductPosition } from "./getFlexibleProductPosition.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceSimpleEarnFlexibleProductList } from "./simpleEarnFlexibleProductList.ts";
+import { registerBinanceGetFlexibleProductPosition } from "./getFlexibleProductPosition.ts";
 
 export function registerBinanceSimpleEarnAccountApiTools(server: McpServer) {
     // Registers a tool to get the list of flexible earning products

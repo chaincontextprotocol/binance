@@ -1,17 +1,17 @@
 // src/tools/binance-spot/market-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceKlines } from "./klines.js";
-import { registerBinanceTicker24hr } from "./ticker24hr.js";
-import { registerBinanceDepth } from "./depth.js";
-import { registerBinanceAggTrades } from "./aggTrades.js";
-import { registerBinanceTickerTradingDay } from "./tickerTradingDay.js";
-import { registerBinanceUiKlines } from "./uiKlines.js";
-import { registerBinanceTickerBookTicker } from "./tickerBookTicker.js";
-import { registerBinanceAvgPrice } from "./avgPrice.js";
-import { registerBinanceTickerPrice } from "./tickerPrice.js";
-import { registerBinanceTicker } from "./ticker.js";
-import { registerBinanceHistoricalTrades } from "./historicalTrades.js";
-import { registerBinanceGetTrades } from "./getTrades.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceKlines } from "./klines.ts";
+import { registerBinanceTicker24hr } from "./ticker24hr.ts";
+import { registerBinanceDepth } from "./depth.ts";
+import { registerBinanceAggTrades } from "./aggTrades.ts";
+import { registerBinanceTickerTradingDay } from "./tickerTradingDay.ts";
+import { registerBinanceUiKlines } from "./uiKlines.ts";
+import { registerBinanceTickerBookTicker } from "./tickerBookTicker.ts";
+import { registerBinanceAvgPrice } from "./avgPrice.ts";
+import { registerBinanceTickerPrice } from "./tickerPrice.ts";
+import { registerBinanceTicker } from "./ticker.ts";
+import { registerBinanceHistoricalTrades } from "./historicalTrades.ts";
+import { registerBinanceGetTrades } from "./getTrades.ts";
 
 export function registerBinanceMarketApiTools(server: McpServer) {
     registerBinanceKlines(server);

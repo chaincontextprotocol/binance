@@ -1,20 +1,20 @@
 // src/tools/binance-wallet/asset-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceWalletUserAsset } from "./userAsset.js";
-import { registerBinanceWalletFundingWallet } from "./fundingWallet.js";
-import { registerBinanceWalletAssetDetail } from "./assetDetail.js";
-import { registerBinanceWalletTradeFee } from "./tradeFee.js";
-import { registerBinanceWalletUserUniversalTransfer } from "./userUniversalTransfer.js";
-import { registerBinanceWalletQueryUserUniversalTransferHistory } from "./queryUserUniversalTransferHistory.js";
-import { registerBinanceWalletDustTransfer } from "./dustTransfer.js";
-import { registerBinanceWalletDustlog } from "./dustlog.js";
-import { registerBinanceWalletAssetDividendRecord } from "./assetDividendRecord.js";
-import { registerBinanceWalletGetAssetsThatCanBeConvertedIntoBnb } from "./getAssetsThatCanBeConvertedIntoBnb.js";
-import { registerBinanceWalletToggleBnbBurnOnSpotTradeAndMarginInterest } from "./toggleBnbBurnOnSpotTradeAndMarginInterest.js";
-import { registerBinanceWalletGetCloudMiningPaymentAndRefundHistory } from "./getCloudMiningPaymentAndRefundHistory.js";
-import { registerBinanceWalletQueryUserDelegationHistory } from "./queryUserDelegationHistory.js";
-import { registerBinanceWalletGetOpenSymbolList } from "./getOpenSymbolList.js";
-import { registerBinanceWalletQueryUserWalletBalance } from "./queryUserWalletBalance.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceWalletUserAsset } from "./userAsset.ts";
+import { registerBinanceWalletFundingWallet } from "./fundingWallet.ts";
+import { registerBinanceWalletAssetDetail } from "./assetDetail.ts";
+import { registerBinanceWalletTradeFee } from "./tradeFee.ts";
+import { registerBinanceWalletUserUniversalTransfer } from "./userUniversalTransfer.ts";
+import { registerBinanceWalletQueryUserUniversalTransferHistory } from "./queryUserUniversalTransferHistory.ts";
+import { registerBinanceWalletDustTransfer } from "./dustTransfer.ts";
+import { registerBinanceWalletDustlog } from "./dustlog.ts";
+import { registerBinanceWalletAssetDividendRecord } from "./assetDividendRecord.ts";
+import { registerBinanceWalletGetAssetsThatCanBeConvertedIntoBnb } from "./getAssetsThatCanBeConvertedIntoBnb.ts";
+import { registerBinanceWalletToggleBnbBurnOnSpotTradeAndMarginInterest } from "./toggleBnbBurnOnSpotTradeAndMarginInterest.ts";
+import { registerBinanceWalletGetCloudMiningPaymentAndRefundHistory } from "./getCloudMiningPaymentAndRefundHistory.ts";
+import { registerBinanceWalletQueryUserDelegationHistory } from "./queryUserDelegationHistory.ts";
+import { registerBinanceWalletGetOpenSymbolList } from "./getOpenSymbolList.ts";
+import { registerBinanceWalletQueryUserWalletBalance } from "./queryUserWalletBalance.ts";
 
 export function registerBinanceWalletAssetApiTools(server: McpServer) {
     registerBinanceWalletUserAsset(server);

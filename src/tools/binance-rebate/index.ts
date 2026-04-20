@@ -1,6 +1,6 @@
 // src/tools/binance-rebate/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceGetSpotRebateHistoryRecords } from "./rebate-api/getSpotRebateHistoryRecords.js";
+import { McpServer } from "../../mcp.ts";
+import { registerBinanceGetSpotRebateHistoryRecords } from "./rebate-api/getSpotRebateHistoryRecords.ts";
 
 export function registerBinanceRebateTools(server: McpServer) {
     registerBinanceGetSpotRebateHistoryRecords(server);

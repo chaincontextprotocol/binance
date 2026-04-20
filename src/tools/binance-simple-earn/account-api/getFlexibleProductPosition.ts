@@ -1,8 +1,8 @@
 // src/tools/binance-simple-earn/account-api/getFlexibleProductPosition.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { simpleEarnClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { simpleEarnClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceGetFlexibleProductPosition(server: McpServer) {
     server.tool(

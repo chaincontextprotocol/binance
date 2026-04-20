@@ -1,18 +1,18 @@
 // src/tools/binance-mining/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceAcquiringAlgorithm } from "./mining-api/acquiringAlgorithm.js";
-import { registerBinanceAcquiringCoinName } from "./mining-api/acquiringCoinname.js";
-import { registerBinanceHashRateResaleList } from "./mining-api/hashrateResaleList.js";
-import { registerBinanceRequestForMinerList } from "./mining-api/requestForMinerList.js";
-import { registerBinanceRequestForDetailMinerList } from "./mining-api/requestForDetailMinerList.js";
-import { registerBinanceExtraBonusList } from "./mining-api/extraBonusList.js";
-import { registerBinanceEarningsList } from "./mining-api/earningsList.js";
-import { registerBinanceCancelHashRateResaleConfiguration } from "./mining-api/cancelHashrateResaleConfiguration.js";
-import { registerBinanceHashRateResaleDetail } from "./mining-api/hashrateResaleDetail.js";
-import { registerBinanceMiningAccountEarning } from "./mining-api/miningAccountEarning.js";
-import { registerBinanceStatisticList } from "./mining-api/statisticList.js";
-import { registerBinanceHashRateResaleRequest } from "./mining-api/hashrateResaleRequest.js";
-import { registerBinanceAccountList } from "./mining-api/accountList.js";
+import { McpServer } from "../../mcp.ts";
+import { registerBinanceAcquiringAlgorithm } from "./mining-api/acquiringAlgorithm.ts";
+import { registerBinanceAcquiringCoinName } from "./mining-api/acquiringCoinname.ts";
+import { registerBinanceHashRateResaleList } from "./mining-api/hashrateResaleList.ts";
+import { registerBinanceRequestForMinerList } from "./mining-api/requestForMinerList.ts";
+import { registerBinanceRequestForDetailMinerList } from "./mining-api/requestForDetailMinerList.ts";
+import { registerBinanceExtraBonusList } from "./mining-api/extraBonusList.ts";
+import { registerBinanceEarningsList } from "./mining-api/earningsList.ts";
+import { registerBinanceCancelHashRateResaleConfiguration } from "./mining-api/cancelHashrateResaleConfiguration.ts";
+import { registerBinanceHashRateResaleDetail } from "./mining-api/hashrateResaleDetail.ts";
+import { registerBinanceMiningAccountEarning } from "./mining-api/miningAccountEarning.ts";
+import { registerBinanceStatisticList } from "./mining-api/statisticList.ts";
+import { registerBinanceHashRateResaleRequest } from "./mining-api/hashrateResaleRequest.ts";
+import { registerBinanceAccountList } from "./mining-api/accountList.ts";
 
 export function registerBinanceMiningTools(server: McpServer) {
     registerBinanceAcquiringAlgorithm(server);

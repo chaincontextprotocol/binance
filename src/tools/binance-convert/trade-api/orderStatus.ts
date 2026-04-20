@@ -1,8 +1,8 @@
 // src/tools/binance-convert/trade-api/orderStatus.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { convertClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { convertClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceConvertOrderStatus(server: McpServer) {
     server.tool(

@@ -6,11 +6,6 @@ build/
 dist/
 *.tsbuildinfo
 
-# Environment / secrets
-.env
-.env.*
-!.env.example
-
 # Lockfiles from other package managers
 pnpm-lock.yaml
 yarn.lock

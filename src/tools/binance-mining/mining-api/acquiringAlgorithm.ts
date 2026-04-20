@@ -1,7 +1,7 @@
 // src/tools/binance-mining/mining-api/acquiringAlgorithm.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { miningClient } from "../../../config/binanceClient.js";
-import { fail } from "../../../utils/toolResponse.js";
+import { McpServer } from "../../../mcp.ts";
+import { miningClient } from "../../../config/binanceClient.ts";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceAcquiringAlgorithm(server: McpServer) {
     server.tool(

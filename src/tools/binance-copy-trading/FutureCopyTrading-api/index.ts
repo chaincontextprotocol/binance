@@ -1,7 +1,7 @@
 // src/tools/binance-copy-trading/FutureCopyTrading-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceGetFuturesLeadTraderStatus } from "./getFuturesLeadTraderStatus.js";
-import { registerBinanceGetFuturesLeadTradingSymbolWhitelist } from "./getFuturesLeadTradingSymbolWhitelist.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceGetFuturesLeadTraderStatus } from "./getFuturesLeadTraderStatus.ts";
+import { registerBinanceGetFuturesLeadTradingSymbolWhitelist } from "./getFuturesLeadTradingSymbolWhitelist.ts";
 
 // Registers Binance Futures Copy Trading API tools with the MCP server.
 export function registerBinanceFutureCopyTradingApiTools(server: McpServer) {

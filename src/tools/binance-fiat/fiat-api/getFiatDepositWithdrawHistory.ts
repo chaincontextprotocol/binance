@@ -1,8 +1,8 @@
 // src/tools/binance-fiat/fiat-api/getFiatDepositWithdrawHistory.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { fiatClient } from "../../../config/binanceClient.js";
+import { McpServer } from "../../../mcp.ts";
+import { fiatClient } from "../../../config/binanceClient.ts";
 import { z } from "zod";
-import { fail } from "../../../utils/toolResponse.js";
+import { fail } from "../../../utils/toolResponse.ts";
 
 export function registerBinanceGetFiatDepositWithdrawHistory(server: McpServer) {
     server.tool(

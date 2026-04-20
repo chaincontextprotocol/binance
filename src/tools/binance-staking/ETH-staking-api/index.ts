@@ -1,16 +1,16 @@
 // src/tools/binance-staking/ETH-staking-api/index.ts
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBinanceEthStakingAccount } from "./ethStakingAccount.js";
-import { registerBinanceGetCurrentEthStakingQuota } from "./getCurrentEthStakingQuota.js";
-import { registerBinanceGetEthRedemptionHistory } from "./getEthRedemptionHistory.js";
-import { registerBinanceGetEthStakingHistory } from "./getEthStakingHistory.js";
-import { registerBinanceGetWbethRateHistory } from "./getWbethRateHistory.js";
-import { registerBinanceGetWbethRewardsHistory } from "./getWbethRewardsHistory.js";
-import { registerBinanceGetWbethUnwrapHistory } from "./getWbethUnwrapHistory.js";
-import { registerBinanceGetWbethWrapHistory } from "./getWbethWrapHistory.js";
-import { registerBinanceRedeemEth } from "./redeemEth.js";
-import { registerBinanceSubscribeEthStaking } from "./subscribeEthStaking.js";
-import { registerBinanceWrapBeth } from "./wrapBeth.js";
+import { McpServer } from "../../../mcp.ts";
+import { registerBinanceEthStakingAccount } from "./ethStakingAccount.ts";
+import { registerBinanceGetCurrentEthStakingQuota } from "./getCurrentEthStakingQuota.ts";
+import { registerBinanceGetEthRedemptionHistory } from "./getEthRedemptionHistory.ts";
+import { registerBinanceGetEthStakingHistory } from "./getEthStakingHistory.ts";
+import { registerBinanceGetWbethRateHistory } from "./getWbethRateHistory.ts";
+import { registerBinanceGetWbethRewardsHistory } from "./getWbethRewardsHistory.ts";
+import { registerBinanceGetWbethUnwrapHistory } from "./getWbethUnwrapHistory.ts";
+import { registerBinanceGetWbethWrapHistory } from "./getWbethWrapHistory.ts";
+import { registerBinanceRedeemEth } from "./redeemEth.ts";
+import { registerBinanceSubscribeEthStaking } from "./subscribeEthStaking.ts";
+import { registerBinanceWrapBeth } from "./wrapBeth.ts";
 
 export function registerBinanceETHStakingApiTools(server: McpServer) {
     registerBinanceEthStakingAccount(server);
